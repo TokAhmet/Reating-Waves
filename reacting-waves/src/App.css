@@ -1,0 +1,238 @@
+html{
+  height: 100vh;
+  background-color: #b7b7cf;
+}
+
+/* line 1, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/partials/_mainDiv.scss */
+.App {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  color: #fff;
+  animation: fadein 1.5s;
+  text-align: center;
+}
+
+/* line 1, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/partials/_header.scss */
+.App-header {
+  background-color: #6355b3;
+  padding: 20px;
+  color: #fff;
+}
+
+/* line 1, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_navbar.scss */
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 5rem;
+  width: 100%;
+  text-shadow: 5px 10px 10px #0d0d0d;
+}
+
+/* line 1, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_containerDiv.scss */
+.container {
+  background-color: #99b3ff;
+  width: 80%;
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 1rem;
+  color: #0d0d0d;
+  box-shadow: 0px 1px 20px 0px #000;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 35px 0 35px 0;
+  transition: height 2s;
+}
+
+/* line 1, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.reg-form {
+  background-color: #6355b3;
+  width: 45%;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1em;
+  font-size: 1rem;
+  color: #fff;
+  box-shadow: 0px 1px 20px 0px #000;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 0 35px 0 35px;
+  width: 100%;
+}
+
+/* line 15, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.reg-form h3 {
+  font-size: 1.5rem;
+  text-shadow: 5px 10px 10px #0d0d0d;
+}
+
+/* line 21, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.reg-input {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 1rem 0;
+  margin: 10px 0;
+}
+
+/* line 28, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.reg-input label {
+  font-weight: bold;
+}
+
+/* line 32, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.reg-input input {
+  border: none;
+  padding: 0.5rem;
+  width: 80%;
+}
+
+/* line 40, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.entry-form {
+  background-color: #6355b3;
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 1rem;
+  color: #fff;
+  box-shadow: 0px 1px 20px 0px #000;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 0 35px 0 35px;
+  width: 80%;
+}
+
+/* line 52, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.entry-form label {
+  margin: 0 10px;
+}
+
+/* line 56, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.entry-form button {
+  display: block;
+  margin: 10px auto;
+  padding: 3px 60px 3px 60px;
+  border-radius: 14px;
+  font-weight: bold;
+  font-style: italic;
+  cursor: pointer;
+}
+
+/* line 66, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.entry-form input {
+  border: none;
+  padding: 0.5rem;
+  width: 30%;
+  margin: 10px auto;
+}
+
+/* line 75, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.search-form {
+  margin: auto auto 1rem;
+  border-radius: 3px solid #000;
+  z-index: 100;
+}
+
+/* line 81, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.comment-form {
+  padding: 2rem 0;
+  margin: 10px auto;
+}
+
+/* line 86, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.comment-inputs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 1rem;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+/* line 97, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.comment-inputs input {
+  margin: 0;
+}
+
+/* line 101, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+.comment-holder {
+  background-color: #fff;
+  border: 2px solid #000;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+/* line 109, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_forms.scss */
+input[type="button"],
+input[type="submit"] {
+  padding: 3px 60px 3px 60px;
+  background-color: #99b3ff;
+  border-radius: 14px;
+  margin: 0 10px;
+  font-weight: bold;
+  font-style: italic;
+  cursor: pointer;
+  outline:0;
+}
+
+/* line 1, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_comment.scss */
+.comment-inputs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 1rem;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+/* line 12, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_comment.scss */
+.comment-inputs input {
+  margin: 0;
+}
+
+/* line 16, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_comment.scss */
+.comment-holder {
+  background-color: #fff;
+  border: 2px solid #000;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+/* line 24, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials/_comment.scss */
+.user-comment {
+  border-bottom: 1px solid #000;
+  padding: 10px;
+}
+
+/* line 1, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials//_globals.scss */
+input[type="button"],
+input[type="submit"] {
+  padding: 3px 60px 3px 60px;
+  background-color: #99b3ff;
+  border-radius: 14px;
+  margin: 0 10px;
+  font-weight: bold;
+  font-style: italic;
+  cursor: pointer;
+}
+
+/* line 13, C:/Users/Ahmet/Documents/React/reacting-waves/src/Sass/Partials//_globals.scss */
+span {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=../App.map */
