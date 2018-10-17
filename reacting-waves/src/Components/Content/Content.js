@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from '../../Firebase/firebase.js';
-import SearchByTitle from '../Forms/Search.js';
+import SearchByTitle from '../Forms/SearchByTitle.js';
+import SearchEntryByCreatedUser from '../Forms/SearchByCreated.js';
 import Comments from '../Comments/Comments.js';
 
 class Content extends Component {
@@ -179,6 +180,80 @@ class Content extends Component {
             
             this.setState({ searchEntryList : find });
         }
+    }
+    
+    showEntryByCreatedUser = (e) => {
+        if (e.key === 'Enter') {
+  
+            let find = this.state.entries.filter(entry => {
+                if(entry.value.createdBy.toLowerCase().includes(this.state.tInput.toLowerCase()) != 0){
+                    return  entry.value;      
+                }
+            }); 
+            console.log(this.state.searchEntryList);
+            
+            this.setState({ searchEntryList : find });
+        }
+    }
+    
+    sortByFirstWord = () => {
+      let sortTitle =  this.state.entries.sort((a,b) => {
+          if(b.value.Title < a.value.Title) return 1;
+          if(b.value.Title > a.value.Title) return -1;
+          return 0;
+      });
+      
+      let sortSearchTitle =  this.state.searchEntryList.sort((a,b) => {
+        if(b.value.Title < a.value.Title) return 1;
+        if(b.value.Title > a.value.Title) return -1;
+        return 0;
+      });
+      
+      console.log(sortTitle);
+      this.setState({ entries : sortTitle, searchEntryList : sortSearchTitle });
+    }
+
+    sortByLastWord = () => {
+      let sortTitle =  this.state.entries.sort((a,b) => {
+         if(a.value.Title < b.value.Title) return 1;
+         if(a.value.Title > b.value.Title) return -1;
+         return 0;
+      });
+      
+      let sortSearchTitle =  this.state.searchEntryList.sort((a,b) => {
+        if(a.value.Title < b.value.Title) return 1;
+        if(a.value.Title > b.value.Title) return -1;
+        return 0;
+      });
+
+      console.log(sortTitle);
+      this.setState({ entries : sortTitle, searchEntryList : sortSearchTitle });
+    }
+ 
+    sortByLatestDate = () => {
+      let sortDate =  this.state.entries.sort((a,b) => {
+        return new Date(b.value.Date) - new Date(a.value.Date);
+      });
+
+      let sortSearchDate =  this.state.searchEntryList.sort((a,b) => {
+        return new Date(b.value.Date) - new Date(a.value.Date);
+      });
+      
+      console.log(sortDate);
+      this.setState({ entries : sortDate, searchEntryList : sortSearchDate });
+    } 
+    
+    sortByOldestDate = () => {
+      let sortDate =  this.state.entries.sort((a,b) => {
+        return new Date(a.value.Date) - new Date(b.value.Date);
+      });
+
+      let sortSearchDate =  this.state.searchEntryList.sort((a,b) => {
+        return new Date(a.value.Date) - new Date(b.value.Date);
+      });
+      
+      console.log(sortDate);
+      this.setState({ entries : sortDate , searchEntryList : sortSearchDate });
     } 
     
     render() {
@@ -239,17 +314,32 @@ class Content extends Component {
 
             return (
                 <div className="entry-form">
+                  <div className="row">
                     <SearchByTitle
                     find={this.findEntryByInput.bind(this)} 
                     enter={this.showEntryByTitle}/>
 
-                    <form onSubmit={e => {e.preventDefault();}}>
+                    <SearchEntryByCreatedUser 
+                    find={this.findEntryByInput.bind(this)}
+                    enter={this.showEntryByCreatedUser}/>
+
+                  </div>
+                  <div className="row">
+                    <button onClick={() => this.sortByOldestDate()}>Sort By Oldest Date</button>
+                    <button onClick={() => this.sortByLatestDate()}>Sort By Latest Date</button>
+                  </div>
+                  <div className="row">
+                    <button onClick={() => this.sortByFirstWord()}>Sort By First letter in Title</button>
+                    <button onClick={() => this.sortByLastWord()}>Sort By Last letter in Title</button>
+                  </div>
+                  <form onSubmit={e => {e.preventDefault();}}>
+                    <h1>Create Entry</h1>
                     <label>Title: </label>
                     <input type='text' ref={(input) => this.title = input} placeholder="Enter your Title" required/>
                     <label>Content: </label>
                     <input type='text' ref={(input) => this.content = input} placeholder="Enter you Content" required/>
                     <button type="submit" onClick={this.addEntry}>Add Entry</button>
-                    </form>
+                  </form>
                 {entryList}
                 
                 </div>
